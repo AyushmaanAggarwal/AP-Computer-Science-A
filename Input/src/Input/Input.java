@@ -11,7 +11,8 @@ public class Input {
 		System.out.println("Type your age here: ");
 		int age = kb.nextInt();
 		int year = 2020-age;
-		System.out.println("Hello "+ name +"! I can't believe you were born in "+ year +"! Here is a cup of java!");
+		System.out.println("Hello "+ name +"! I can't believe you were born in "
+				+ year +"! Here is a cup of java!");
 		System.out.println("   x   x    x \n"
 				+          "  x    x   x \n"
 				+ 		   "   x  x   x \n\n"
