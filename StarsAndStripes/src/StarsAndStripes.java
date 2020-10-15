@@ -2,7 +2,7 @@ import static java.lang.System.*;
 
 public class StarsAndStripes
 {
-   public StarsAndStripes()
+   public StarsAndStripes() // Defalt constructor -> empty parameters,
    {
       out.println("StarsAndStripes");
       printTwoBlankLines();
@@ -20,16 +20,28 @@ public class StarsAndStripes
 
    public void printTwoBlankLines()
    {
-	   out.println("");
-	   out.println("");
+	   out.println("\n");
    }
    
    public void printASmallBox()
    {	
-	   out.println("");
+	   //Method call to draw the dashes
+	   printTwentyDashes();
+	   //Method call to draw the stars
+	   printTwentyStars();
+	   //Call the dashes and stars twice more
+	   printTwentyDashes();
+	   printTwentyStars();
+	   printTwentyDashes();
+	   printTwentyStars();
+	   printTwentyDashes();
+
    }
  
    public void printABigBox()
    { 	
+	   //Method call draw small box twice
+	   printASmallBox();
+	   printASmallBox();
    }   
 }
