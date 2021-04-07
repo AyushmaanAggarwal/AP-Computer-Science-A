@@ -8,16 +8,20 @@ public class RPSRunner
 		Scanner kb = new Scanner(System.in);
 		char response;
     String player = "";
+		RockPaperScissors rps = new RockPaperScissors();
 
     //add in a do while loop after you get the basics up and running
     do {
   		out.print("Rock-Paper-Scissors - pick your weapon [R,P,S] :: ");
-      RockPaperScissors rps = new RockPaperScissors(kb.next());
-      out.println("\n"+rps.toString());
+			rps.setChoice(kb.next());
+			out.println("\n"+rps.toString());
       out.println(rps.determineWinner());
+
+			out.println(rps.count());
 			out.println("Do you want to play again? [Y,N]");
 			response = kb.next().toUpperCase().charAt(0);
-    }while(response=='Y');
+			out.println("_______________________________________________________");
+		}while(response=='Y');
 
 
 	}
