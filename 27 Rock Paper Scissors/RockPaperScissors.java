@@ -7,10 +7,14 @@ public class RockPaperScissors
 	private String compChoice;
   private String winner;
   private String output;
+	private int counter=0;
+	private int correctCounter=0;
 
-  public RockPaperScissors(String player)
+  public RockPaperScissors()
 	{
-    playChoice = player.toUpperCase();
+	}
+	public void setChoice(String player){
+		playChoice = player.toUpperCase();
     switch ((int)(Math.random()*3)){
     	case 0:compChoice="R";
     	case 1:compChoice="P";
@@ -20,24 +24,25 @@ public class RockPaperScissors
 
 	public String determineWinner()
 	{
+		counter++;
     switch (playChoice) {
       case "R":
         switch (compChoice) {
           case "R": return "!Draw Game!";
           case "P": return "!Computer wins <<Paper Covers Rock>>!";
-          case "S": return "!Player wins <<Rock Breaks Scissors>>!";
+          case "S": correctCounter++;return "!Player wins <<Rock Breaks Scissors>>!";
 				}
 			case "P":
         switch (compChoice){
           case "P": return "!Draw Game!";
-          case "R": return "!Player wins <<Paper Covers Rock>>!";
+          case "R": correctCounter++; return "!Player wins <<Paper Covers Rock>>!";
           case "S": return "!Computer wins <<Scissors Cuts Paper>>!";
 				}
 			case "S":
         switch (compChoice){
           case "S": return "!Draw Game!";
           case "R": return "!Computer wins <<Rock Breaks Scissor>>!";
-          case "P": return "!Player wins <<Scissors Cuts Paper>>!";
+          case "P": correctCounter++; return "!Player wins <<Scissors Cuts Paper>>!";
 				}
 		}
 		return "Not A Valid Weapon! Pick Rock, Paper or Scissors";
@@ -47,5 +52,11 @@ public class RockPaperScissors
 	{
 		String output="player had "+playChoice+"\ncomputer had "+compChoice;
 		return output;
+	}
+	public String count(){
+		if (counter >1){
+			return "\nYou have won "+correctCounter+" out of "+counter+" times.\n";
+		}
+		return "\nPlay again to see your statistics";
 	}
 }
