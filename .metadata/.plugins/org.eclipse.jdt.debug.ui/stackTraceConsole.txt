@@ -1,0 +1,2 @@
+System.out.println("Type your name here: ");
+		String name = kb.nextLine();
