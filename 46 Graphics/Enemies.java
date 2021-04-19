@@ -31,7 +31,7 @@ public class Enemies
         }
 		// GO THROUGH THE LIST OF ENEMIES AND CALL THEIR draw() and move() method and check if their collide with guy if so then call the GAMEOVER() METHOD
 		for(int i = 0; i<enemies.size(); i++){
-            if(enemies.get(i).draw()>800){
+            if(enemies.get(i).getX()>800){
                 enemies.remove(i);
             }
         }
