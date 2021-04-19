@@ -21,15 +21,10 @@ public class Person
 		
 		//point the array list at a new ArrayList
         list = new ArrayList<Image>();
-		//add all images to the list
-        Image front = ImageIO.read(new File("dude.gif"));
-        list.add(front);
-        Image U = ImageIO.read(new File("dudeU.gif"));
-        list.add(U);
-        Image R = ImageIO.read(new File("dudeR.gif"));
-        list.add(R);
-        Image L = ImageIO.read(new File("dudeL.gif"));
-        list.add(L);
+        list.add(ImageIO.read(new File("C:\\Users\\ayush\\Programming\\ApJava2020\\46 Graphics\\dude.gif")));
+        list.add(ImageIO.read(new File("C:\\Users\\ayush\\Programming\\ApJava2020\\46 Graphics\\dudeU.gif")));
+        list.add(ImageIO.read(new File("C:\\Users\\ayush\\Programming\\ApJava2020\\46 Graphics\\dudeR.gif")));
+        list.add(ImageIO.read(new File("C:\\Users\\ayush\\Programming\\ApJava2020\\46 Graphics\\dudeL.gif")));
 	}
 	
 	// will return true if person collides with another object
@@ -42,7 +37,7 @@ public class Person
 	
 	public void drawPerson(Graphics2D g)
 	{
-		Graphics.drawImage(g, x, y, null);
+		g.drawImage(list.get(current), x, y, null);
 	}
 	
 	public Image getCurrent()
@@ -61,21 +56,25 @@ public class Person
 	
 	public void moveRight()
 	{
-		current = 3;		
+		current = 2;	
+		x = x+50;	
 	}
 	
 	public void moveLeft()
 	{
-		current = 4;
+		current = 3;
+		x = x-50;
 	}
 	
 	public void moveUp()
 	{
-		current = 1;
+		current = 0;
+		y = y + 50;
 	}
 	
 	public void moveDown()
 	{
-		current = 0;
+		current = 1;
+		y = y - 50;
 	}
 }
