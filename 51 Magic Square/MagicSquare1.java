@@ -34,7 +34,7 @@ public class MagicSquare1
             if(sumCol(i)!=compare)
                 return false;
         }
-		return false;
+		return true;
 	}
 
 	public int sumRow( int r )
