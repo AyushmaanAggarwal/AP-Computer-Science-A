@@ -3,7 +3,7 @@ import java.io.IOException;
 import java.util.Scanner;
 import static java.lang.System.*;
 
-public class MagicSquare1Runner{
+public class MagicSquareRunner{
     public static void main( String[] args ) throws IOException{
         System.out.println("1");
         Scanner kb = new Scanner(new File("C:\\Users\\ayush\\Programming\\ApJava2020\\51 Magic Square\\magic1.dat"));
