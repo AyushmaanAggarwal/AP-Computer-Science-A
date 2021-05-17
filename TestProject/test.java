@@ -1,37 +1,9 @@
 import java.util.ArrayList;
+import java.lang.Math;
 public class test{
     public static void main(String[] args){
-        int[][] mat = new int[12][12];
-        for(int r=0; r<mat.length; r++ )
-        {   
-        for(int c=0; c<=r; c++ )   
-        {
-            if(c==0||r==0)        
-                mat[r][c]=1;     
-            else          
-                mat[r][c]=mat[r-1][c]+mat[r-1][c-1];   
-        }
-        }
-        System.out.println(mat[5][4]);
+        
+        System.out.println((int) Math.random()*2);
 
-    }
-}
-public class OB{
-    protected int a = 0;
-    public OB(){
-        a = 1;
-    }
-    public int add(){
-        a+=10;
-        return a;
-    }
-}
-public class obj extends OB{
-    public obj(){
-        super();
-    }
-    public int add(){
-        a+=12;
-        return a;
     }
 }

@@ -23,6 +23,23 @@ public class AtCounter
         }
         //you will need to use Math.random()
 	}
+	public AtCounter(int r, int c)
+	{
+        atMat = new String[r][c];
+		filled = new boolean[r][c];
+		//size the matrix
+		//use nested loops to randomly load the matrix
+		for(int i = 0; i<atMat.length; i++){
+            for(int j = 0; j<atMat.length; j++){
+                if(Math.random()<.5){
+                    atMat[i][j] = "@";
+                } else {
+                    atMat[i][j] = "-";
+                }
+            }
+        }
+        //you will need to use Math.random()
+	}
 
 	public int countAts(int r, int c)
 	{
@@ -41,7 +58,7 @@ public class AtCounter
 			if (r-1>=0){
 				num+=countAts(r-1,c);
 			}
-			if (c+1<atMat.length){
+			if (c+1<atMat[0].length){
 				num+=countAts(r,c+1);
 			}
 			if (c-1>=0){
@@ -67,6 +84,6 @@ public class AtCounter
 			}
 			output += "\n";
 		}
-		return output+"\b";
+		return output;
 	}
 }
