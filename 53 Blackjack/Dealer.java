@@ -23,6 +23,6 @@ public class Dealer extends Player
 
 	public boolean hit()
 	{
-	   return currentDeck.hit();
+	   return getHandValue()<17;
     }
 }

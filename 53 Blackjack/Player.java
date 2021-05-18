@@ -1,24 +1,24 @@
 import java.util.*;
 public class Player
 {
-   private ArrayList<Card> hand;
+   private ArrayList<BlackJackCard> hand;
    private int winCount;
 
    public Player ()
    {
-        hand = new ArrayList<Card>();
+        hand = new ArrayList<BlackJackCard>();
         winCount = 0;
    }
 
    public Player (int score)
    {
        winCount = score;
-       hand = new ArrayList<Card>();
+       hand = new ArrayList<BlackJackCard>();
    }
 
    public void addCardToHand( Card temp )
    {
-       hand.add(temp);
+       hand.add(new BlackJackCard(temp.getFace(), temp.getSuit()));
    }
 
    public void resetHand( )
@@ -50,7 +50,7 @@ public class Player
 
    public  boolean  hit( )
    {
-      return getHandValue()<=21;
+      return getHandValue()<21;
    }
 
    public String toString()
